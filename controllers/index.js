@@ -8,7 +8,7 @@ const router = require("express").Router();
 // router.use("/", homeRoutes);
 // router.use("/dashboard", dashboardRoutes);
 
-//TODO: USED TO CREATE HANDSHAKE AND WILL BE ERASED ONCE APIS ARE LINKED
+// //TODO: USED TO CREATE HANDSHAKE AND WILL BE ERASED ONCE APIS ARE LINKED
 router.use(
   "/",
   router.get("/", (req, res) => {
