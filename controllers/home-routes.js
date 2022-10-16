@@ -10,7 +10,7 @@ const Url = require("url");
 router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      attributes: ["id", "title", "contnet", "created_at"],
+      attributes: ["id", "title", "content", "created_at"],
       include: [
         {
           model: User,
@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
       posts,
       loggedIn: req.session.loggedIn,
       active_home: x.path === "/",
-      homeLtrue,
+      home: true,
     });
   } catch (err) {
     console.error(err);
