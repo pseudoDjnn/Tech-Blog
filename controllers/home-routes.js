@@ -36,4 +36,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+// LOGIN
+router.get("/login", (req, res) => {
+  console.log(req.session);
+  if (req.session.loggedIn) {
+    res.redirect("/");
+  }
+  res.render("login");
+});
+
 module.exports = router;
