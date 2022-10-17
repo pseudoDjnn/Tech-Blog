@@ -17,7 +17,7 @@ async function registerHandler(event) {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("You must fill out all required fields.");
     }
   }
 }

@@ -2,14 +2,14 @@
   <div class="container">
     <div class="d-flex">
       <div class="col-md-12">
-        <h1 class="fw-bold">Tech Blog</h1>
+        <h1 class="fw-bold">Your Dashboard</h1>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-  {{#each posts as |post|}}
-  {{>post-info post}}
-  {{/each}}
+    {{#each posts as |post|}}
+        {{> post-info post=post active_home=true }}
+    {{/each}}
 </div>
