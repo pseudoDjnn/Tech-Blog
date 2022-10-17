@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
 class User extends Model {
-  // setup  method to run on instance
   validatePassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
@@ -22,7 +21,7 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        len: [6, 20],
+        len: [4, 15],
       },
     },
     email: {
@@ -37,23 +36,24 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
+        len: [4],
       },
     },
   },
   {
     hooks: {
-      // setup beforecheck lifecycle "hook" function
+      // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      async beforeUpdate(updateUserData) {
-        updateUserData.password = await bcrypt.hash(
-          updateUserData.password,
+
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
           10
         );
-        return updateUserData;
+        return updatedUserData;
       },
     },
     sequelize,
