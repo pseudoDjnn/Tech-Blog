@@ -49,4 +49,8 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// LOGOUT
+router.post("/logout", (req, res) => {});
+
 module.exports = router;
