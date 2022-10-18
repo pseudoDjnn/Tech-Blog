@@ -21,3 +21,7 @@ async function registerHandler(event) {
     }
   }
 }
+
+document
+  .querySelector(".register-form")
+  .addEventListener("submit", registerHandler);
