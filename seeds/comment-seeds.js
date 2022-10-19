@@ -34,6 +34,6 @@ const commentdata = [
   },
 ];
 
-const commentSeeds = () => Comment.bulkCreate(commentdata);
+const seedComments = () => Comment.bulkCreate(commentdata);
 
-module.exports = commentSeeds;
+module.exports = seedComments;

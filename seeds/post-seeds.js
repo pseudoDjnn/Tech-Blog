@@ -19,8 +19,14 @@ const post_data = [
       "https://medium.com/codex/15-fun-and-interesting-apis-to-use-for-your-next-coding-project-in-2022-86a4ff3a2742",
     user_id: 2,
   },
+  {
+    title: "Why MVC is so important",
+    content:
+      "MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
+    user_id: 3,
+  },
 ];
 
-const userSeeds = () => Post.bulkCreate(post_data);
+const seedUsers = () => Post.bulkCreate(post_data);
 
-module.exports = userSeeds;
+module.exports = seedUsers;
