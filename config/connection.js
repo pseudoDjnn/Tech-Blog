@@ -1,9 +1,8 @@
-// Sequelize import form library
+// IMPORTS
 const Sequelize = require("sequelize");
-
 require("dotenv").config();
 
-// connections to the database; passing in MySQL
+// CONNECTION JAWSDB
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_N, process.env.DB_U, process.env.DB_PW, {

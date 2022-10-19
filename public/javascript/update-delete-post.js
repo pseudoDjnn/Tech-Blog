@@ -1,5 +1,4 @@
 // UPDATES YOUR POST
-
 async function updatePost(event) {
   event.preventDefault();
   const postId = window.location.toString().split("/")[
@@ -23,7 +22,6 @@ async function updatePost(event) {
   }
 }
 // DELETE A POST
-
 async function deletePost(event) {
   event.preventDefault();
   const postId = window.location.toString().split("/")[

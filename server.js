@@ -4,7 +4,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 
-// Using Express and calling the PORT
+// USING EXPRESS AND CALLING THE PORT
 const app = express();
 const PORT = process.env.PORT || 3001;
 

@@ -4,6 +4,7 @@ const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 const Url = require("url");
 
+// GRAB ALL USER COMMENTS
 router.get("/", withAuth, async (req, res) => {
   try {
     const dbPostsData = await Post.findAll({
@@ -35,7 +36,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// Post by id
+// GRAB POST BY ID
 router.get("/post/:id/", withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findOne({
@@ -65,7 +66,7 @@ router.get("/post/:id/", withAuth, async (req, res) => {
   }
 });
 
-// add new post
+// GRAB NEWPOST INFO IF USER IS LOGGED IN
 router.get("/new-post", withAuth, (req, res) => {
   res.render("newpost", {
     loggedIn: req.session.loggedIn,

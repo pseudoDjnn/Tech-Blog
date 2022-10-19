@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const { Post, User, Comment } = require("../models");
+const { User, Post, Comment } = require("../models");
 const Url = require("url");
 
+// GRAB ALL USERS
 router.get("/", async (req, res) => {
   try {
     const dbPostsData = await Post.findAll({
@@ -31,7 +32,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// login
+// LOGIN
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
@@ -39,7 +40,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// register
+// REGISTER
 router.get("/register", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -47,7 +48,7 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-// Post by id
+// GRAB INDIVIDUAL POST AND COMMENTS
 router.get("/post/:id/comments", async (req, res) => {
   try {
     const dbPostData = await Post.findOne({
