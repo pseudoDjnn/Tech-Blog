@@ -30,11 +30,10 @@ async function commentHandler(event) {
       alert(response.statusText);
     }
   } else {
-    alert("You must enter a comment");
+    alert("Only comments please");
   }
 }
 
 document
   .querySelector("#comment-form")
   .addEventListener("submit", commentHandler);
-// document.querySelector("add_comment").addEventListener("click", comment_form);

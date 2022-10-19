@@ -4,7 +4,7 @@ async function addPostHandler(event) {
   event.preventDefault();
   const title = document.querySelector("#title").value;
   const content = document.querySelector("#content").value;
-  const user_id = newPostForm.getAttribute("user-data");
+  const user_id = newPost.getAttribute("user-data");
   if (title && content) {
     const response = await fetch("/api/posts", {
       method: "post",
@@ -26,4 +26,4 @@ async function addPostHandler(event) {
   }
 }
 
-newPostForm.addEventListener("submit", addPostHandler);
+newPost.addEventListener("submit", addPostHandler);

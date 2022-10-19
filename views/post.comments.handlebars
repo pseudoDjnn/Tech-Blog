@@ -2,7 +2,7 @@
   <div class="container">
     <div class="d-flex">
       <div class="col-md-12">
-        <h1 class="fw-bold">Post A Comment</h1>
+        <h1 class="fw-bold">Post Comments</h1>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
   {{/if}}
 
   {{#if loggedIn}}
-  <!--- Comment form -->
+  <!--- COMMENT FORM -->
   <form id="comment-form" user-data="{{user_id}}" class="mt-3 d-none" method="POST">
     <div class="form-group card">
       <div class="card-header bg-dark text-light">
@@ -34,7 +34,7 @@
   </form>
   {{/if}}
 
-  <!-- If logged in, add comment btn to show comment form -->
+  <!-- ONLY SHOW IF LOGGED IN -->
   <div class="text-center my-3">
     {{#if loggedIn}}
     <button id="comment-btn" onclick="comment_form()" class="btn btn-dark">Add comment</button>
@@ -44,4 +44,6 @@
   </div>
 </div>
 
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}

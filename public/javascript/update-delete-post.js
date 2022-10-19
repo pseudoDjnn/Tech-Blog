@@ -1,4 +1,5 @@
-// UPDATE
+// UPDATES YOUR POST
+
 async function updatePost(event) {
   event.preventDefault();
   const postId = window.location.toString().split("/")[
@@ -14,14 +15,15 @@ async function updatePost(event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
+
   if (response.ok) {
-    document.location.replace("/dashoard");
+    document.location.replace("/dashboard");
   } else {
     alert(response.statusText);
   }
 }
+// DELETE A POST
 
-// DELETE POST
 async function deletePost(event) {
   event.preventDefault();
   const postId = window.location.toString().split("/")[
