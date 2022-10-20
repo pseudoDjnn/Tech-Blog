@@ -32,6 +32,10 @@ A site built using the MVC framework allow a user to signup and login afterwards
   ```
   npm i, node seeds/index, npm start
   ```
+  
+  ![tech_blog](https://user-images.githubusercontent.com/105378214/196839725-f0916473-5264-4ba7-a27c-95759245901c.png)
+
+  * [Heroku_Site](https://morning-tor-78809.herokuapp.com/)
 
   # Test
 
